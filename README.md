@@ -2,22 +2,21 @@
 
 ## Description 
 
-In this lab we discussed how to connect database with `Docker`, added tables and design Decorator pattern
+In this lab we discussed how to work with `Heroku`
 
 ## Task
 
-- [x] Discuss where implementation of API Layer, Service Layer, Data Access Layer should exist.
-- [x] Refactor business logic of `getFlowers` to `FlowerService`
-- [x] Use `@Autowired` and `@Service` for Dependency Injection.
-- [x] Setup DB with `Docker docker run --name oop-course -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 postgres`
-- [x] Add flowers DB via Database viewer (Intellj IDEA Ultimate or DBViewer)
-- [x] Add JPA config. See application.properties attached.
-- [x] Add `FlowerRepository` interface and inject it instance in `FlowerService`. 
-Inject several record in DB. Check whether the endpoint will return all the records from DB.
-- [x] Add addFlower method to API and Service layers. Implement `@PostMapping` with `@RequestBody` extraction.
-- [x] Test `GET` and `POST` with test.http.
-- [x] Implement `AbstractDecorator` that will implement basic decorator behavior.
-- [x] Implement decorators based on attached diagram. This implementation should follow <a src="https://refactoring.guru/design-patterns/decorator">Decorator Pattern.</a>
-- [x] Cover decorators with tests.
-- [x] Set up GitHub Actions for this project that would run your tests.
+- [x] Create account on Heroku and apply for student discount. Login into Heroku.
+- [x] Create GIT inside your project. Initialize heroku app `heroku create`. Push into Heroku git push heroku main
+- [x] Change version of Java if needed. Check system.properties.
+- [x] Test your app with test.http from previous lab.
+- [x] Implement class `AppUsser` with attributes: id, email, dob, age. Connect it to DB, implement
+GET and POST methods for it to list all users and add user to DB.
+- [x] Implement `@Transient` to replace dob getter. Use `Period.between` local date to implement getter.
+- [x] mplement `Optional<AppUser>findUserByEmail(String email);` to guarantee that we don't have two users with the same email. Check `@Query` annotation `@Query("SELECT u FROM app_user u WHERE u.email = ?1").`
+- [x] Check `@Column` anotation and `unique=true`.
+- [x] Check the information about Observer on <a href="https://refactoring.guru/design-patterns/observer">Refactoring Guru</a>
+and <a href="https://en.wikipedia.org/wiki/Observer_pattern">Wikipedia.</a>
+- [x] Check how functions are subscribed to a frontend activities on <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onclick">W3C School</a>
+- [x] Implement Observer pattern to notify Customer when Order is processed diagram (diagram.png).
 - [x] Send a link to your GitHub here.
